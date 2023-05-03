@@ -18,6 +18,11 @@ The following variables are required to provision the server:
 1. Configure your ami in the `terraform.tfvars` file
 2. Run `terraform init`
 3. Run `terraform apply`
+4. Visit the `server_url` output from provisioning (note: The user script may take a short while to finish installation)
+
+## How it works
+
+The terraform definition provisions an EC2 instance in the default VPC for the account, using the specified AMI and instance type. The instance is provisioned with a user data script that installs nginx and starts the service.
 
 ## Drawbacks of this approach
 
