@@ -9,7 +9,7 @@ data "aws_vpc" "default" {
 resource "aws_instance" "web" {
   ami  = var.ami
   instance_type = var.instance_type
-  user_data = file("config/userdata.tpl")
+  user_data = file("userdata.tpl")
   vpc_security_group_ids = [aws_security_group.web.id]
 
   tags = {
